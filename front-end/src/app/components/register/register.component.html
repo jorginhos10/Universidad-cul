@@ -1,0 +1,162 @@
+<div
+  class="container vh-100 d-flex align-items-center justify-content-center animate__animated animate__bounceInRight"
+>
+  <div class="row w-100">
+    <!-- Sección de Imágenes y Texto -->
+    <div class="col-md-6 d-none d-md-block bg-primary text-white p-5">
+      <img
+        src="assets/img/img_register.png"
+        class="img-fluid"
+        alt="Imagen de bienvenida"
+      />
+      <h1 class="text-center">Sign Up for TaskFlow</h1>
+      <p class="text-center">Create an account to start managing your tasks.</p>
+    </div>
+
+    <!-- Sección del Formulario de Registro -->
+    <div
+      class="col-md-6 bg-light p-5 d-flex justify-content-center align-items-center"
+    >
+      <div class="form-container" style="max-width: 80%; width: 100%">
+        <div class="circle mb-4">
+          <i class="bx bx-user color_Icon"></i>
+        </div>
+
+        <h2 class="mb-4 text-center">Create Account</h2>
+        <p style="font-size: 15px" class="mb-4 text-center text-secondary">
+          Join TaskFlow and start organizing your tasks today.
+        </p>
+
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingName"
+              placeholder="Your Name"
+              name="name"
+              required
+              minlength="2"
+              [(ngModel)]="user.name"
+              [ngClass]="{
+                'is-invalid':
+                  (f.controls['name']?.errors?.['required'] && f.controls['name'].touched) ||
+                  f.submitted && f.controls['name']?.errors
+              }"
+            />
+            <label for="floatingName">Name</label>
+            <span
+              *ngIf="
+                (f.controls['name']?.errors?.['required'] && f.controls['name'].touched) ||
+                f.submitted && f.controls['name']?.errors
+              "
+              class="text-danger animate__animated animate__zoomIn"
+              ><li class="m-1">El name es requerido</li></span
+            >
+            <span
+              *ngIf="
+            (f.controls['name']?.errors?.['minlength'] &&
+              f.controls['name'].touched) ||
+            f.submitted && f.controls['name']?.errors
+          "
+              class="text-danger animate__animated animate__zoomIn"
+              ><li class="m-1">
+                el nombre debe ser de almenos 2 caracteres
+              </li></span
+            >
+          </div>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              email
+              required
+              class="form-control"
+              id="floatingEmail"
+              name="email"
+              placeholder="name@example.com"
+              [(ngModel)]="user.email"
+              [ngClass]="{
+                'is-invalid':
+                (f.controls['email']?.errors?.['required'] && f.controls['email'].touched) ||
+        (f.controls['email']?.errors?.['email'] && f.controls['email'].touched) ||
+        f.submitted && f.controls['email']?.errors
+              }"
+            />
+
+            <label for="floatingEmail">Email address</label>
+            <span
+              *ngIf="
+                (f.controls['email']?.errors?.['required']&& f.controls['email'].touched) ||
+                f.submitted && f.controls['email']?.errors
+              "
+              class="text-danger animate__animated animate__zoomIn"
+              ><li class="m-1">El email es requerido</li></span
+            >
+
+            <span
+              *ngIf="
+              (f.controls['email']?.errors?.['email'] && f.controls['email'].touched) ||
+              f.submitted && f.controls['email']?.errors
+            "
+              class="text-danger animate__animated animate__zoomIn"
+              ><li class="m-1">Ingresa un email válido</li></span
+            >
+          </div>
+
+          <div class="form-floating mb-5">
+            <input
+              type="password"
+              class="form-control"
+              id="floatingPassword"
+              placeholder="Password"
+              name="password"
+              required
+              minlength="8"
+              [(ngModel)]="user.password"
+              [ngClass]="{
+                'is-invalid':
+                  (f.controls['password']?.errors?.['required'] &&
+                    f.controls['password'].touched) ||
+                  f.submitted && f.controls['password']?.errors
+              }"
+            />
+            <label for="floatingPassword">Password</label>
+            <span
+              *ngIf="
+                (f.controls['password']?.errors?.['required'] &&
+                  f.controls['password'].touched) ||
+                f.submitted && f.controls['password']?.errors
+              "
+              class="text-danger animate__animated animate__zoomIn"
+              ><li class="m-1">La contraseña es requerida</li></span
+            >
+
+            <span
+              *ngIf="
+              (f.controls['password']?.errors?.['minlength'] &&
+                f.controls['password'].touched) ||
+              f.submitted && f.controls['password']?.errors
+            "
+              class="text-danger animate__animated animate__zoomIn"
+              ><li class="m-1">
+                La contraseña debe ser de almenos 8 caracteres
+              </li></span
+            >
+          </div>
+          <div class="d-grid gap-2">
+            <button
+              style="padding: 10px 15px"
+              class="btn btn-primary mb-5"
+              type="submit"
+            >
+              Register
+            </button>
+          </div>
+        </form>
+        <p class="text-center">
+          Already have an account? <a routerLink="/login">Login here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

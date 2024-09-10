@@ -1,0 +1,127 @@
+<div
+  class="container vh-100 d-flex align-items-center justify-content-center animate__animated animate__bounceInLeft"
+>
+  <div class="row w-100">
+    <!-- Sección de Imágenes y Texto -->
+    <div class="col-md-6 d-none d-md-block bg-primary text-white p-5">
+      <img
+        src="assets/img/img_login.png"
+        class="img-fluid"
+        alt="Imagen de bienvenida"
+      />
+      <h1 class="text-center">Welcome to Our TaskFlow App</h1>
+      <p class="text-center">
+        Please enter your credentials to access your account.
+      </p>
+    </div>
+
+    <!-- Sección del Formulario de Inicio de Sesión -->
+    <div
+      class="col-md-6 bg-light p-5 d-flex justify-content-center align-items-center"
+    >
+      <div class="form-container" style="max-width: 80%; width: 100%">
+        <div class="circle mb-4">
+          <i class="bx bx-task color_Icon"></i>
+        </div>
+
+        <h2 class="mb-4 text-center">Hello Again!</h2>
+        <p style="font-size: 15px" class="mb-4 text-center text-secondary">
+          TaskFlow is your reliable companion for organizing and managing your
+          daily tasks.
+        </p>
+
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              email
+              required
+              class="form-control"
+              id="floatingEmail"
+              name="email"
+              placeholder="name@example.com"
+              [(ngModel)]="user.email"
+              [ngClass]="{
+              'is-invalid':
+              (f.controls['email']?.errors?.['required'] && f.controls['email'].touched) ||
+      (f.controls['email']?.errors?.['email'] && f.controls['email'].touched) ||
+      f.submitted && f.controls['email']?.errors
+            }"
+            />
+
+            <label for="floatingEmail">Email address</label>
+            <span
+              *ngIf="
+              (f.controls['email']?.errors?.['required']&& f.controls['email'].touched) ||
+              f.submitted && f.controls['email']?.errors
+            "
+              class="text-danger animate__animated animate__zoomIn"
+              ><li class="m-1">El email es requerido</li></span
+            >
+
+            <span
+              *ngIf="
+            (f.controls['email']?.errors?.['email'] && f.controls['email'].touched) ||
+            f.submitted && f.controls['email']?.errors
+          "
+              class="text-danger animate__animated animate__zoomIn"
+              ><li class="m-1">Ingresa un email válido</li></span
+            >
+          </div>
+          <div class="form-floating mb-5">
+            <input
+              type="password"
+              class="form-control"
+              id="floatingPassword"
+              placeholder="Password"
+              name="password"
+              required
+              minlength="8"
+              [(ngModel)]="user.password"
+              [ngClass]="{
+              'is-invalid':
+                (f.controls['password']?.errors?.['required'] &&
+                  f.controls['password'].touched) ||
+                f.submitted && f.controls['password']?.errors
+            }"
+            />
+            <label for="floatingPassword">Password</label>
+            <span
+              *ngIf="
+              (f.controls['password']?.errors?.['required'] &&
+                f.controls['password'].touched) ||
+              f.submitted && f.controls['password']?.errors
+            "
+              class="text-danger animate__animated animate__zoomIn"
+              ><li class="m-1">La contraseña es requerida</li></span
+            >
+
+            <span
+              *ngIf="
+            (f.controls['password']?.errors?.['minlength'] &&
+              f.controls['password'].touched) ||
+            f.submitted && f.controls['password']?.errors
+          "
+              class="text-danger animate__animated animate__zoomIn"
+              ><li class="m-1">
+                La contraseña debe ser de almenos 8 caracteres
+              </li></span
+            >
+          </div>
+          <div class="d-grid gap-2">
+            <button
+              style="padding: 10px 15px"
+              class="btn btn-primary mb-5"
+              type="submit"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+        <p class="text-center">
+          Need an account? <a routerLink="/register">Sign up here</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

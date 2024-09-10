@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap");
+h2 {
+  font-family: "Nerko One", cursive;
+  /* font-weight: 900; */
+  font-style: normal;
+  font-size: 30px;
+}
+/* Contenedor del checkbox */
+.circle-checkbox-container {
+  display: inline-block;
+  position: relative;
+}
+
+/* Ocultar el checkbox original */
+.circle-checkbox {
+  display: none;
+}
+
+/* Estilo del label que actúa como círculo */
+.circle-label {
+  display: inline-block;
+  width: 24px; /* Tamaño del círculo */
+  height: 24px; /* Tamaño del círculo */
+  border-radius: 50%; /* Forma circular */
+  background-color: transparent;
+  border: 2px solid gray; /* Borde del círculo */
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* Cambiar el color del círculo cuando el checkbox está seleccionado */
+.circle-checkbox:checked + .circle-label {
+  background-color: "#fff"; /* Color del círculo cuando está seleccionado */
+  border-color: "#000"; /* Color del borde cuando está seleccionado */
+}
+
+/* Estilo para el contenido del círculo cuando está seleccionado */
+.circle-checkbox:checked + .circle-label::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px; /* Tamaño del punto dentro del círculo */
+  height: 10px; /* Tamaño del punto dentro del círculo */
+  border-radius: 50%;
+  background-color: white; /* Color del punto dentro del círculo */
+  transform: translate(-50%, -50%);
+}
+
+/* Estilo del botón redondo */
+.btn-dark.rounded-circle {
+  background-color: #000; /* Fondo del botón */
+  border: none; /* Elimina el borde del botón */
+  width: 50px; /* Tamaño del botón */
+  height: 50px; /* Tamaño del botón */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; /* Elimina el padding predeterminado */
+  border-radius: 50%; /* Hace el botón redondo */
+}
+
+/* Estilo para el ícono dentro del botón */
+.btn-dark.rounded-circle i {
+  color: white; /* Color del ícono */
+}
+
+/* Estilo para el botón de menú con los tres puntos */
+.btn-transparent {
+  background-color: transparent;
+  border: none;
+}
+
+/* Estilo del menú desplegable */
+.dropdown-menu {
+  min-width: 150px; /* Ancho del menú desplegable */
+}
+
+/* Alineación del botón de menú */
+.dropdown-toggle::after {
+  display: none; /* Oculta el ícono de flecha predeterminado */
+}
+
+/* Estilo para el contenedor de los checkboxes */
+.status-checkboxes {
+  display: flex;
+  gap: 10px;
+}
+
+/* Estilo para cada checkbox y su etiqueta */
+.status-checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Ocultar el checkbox original */
+.status-checkbox {
+  display: none;
+}
+
+/* Estilo de la etiqueta del checkbox */
+.status-label {
+  background-color: #f0f0f0;
+  border: none;
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 200;
+
+  font-style: normal;
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 5px 10px; /* Espaciado interno */
+  cursor: pointer;
+  font-size: 18px; /* Tamaño de fuente */
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Cambiar el estilo cuando el checkbox está marcado */
+.status-checkbox:checked + .status-label {
+  background-color: #000; /* Color de fondo cuando está marcado */
+  border-color: #000; /* Color del borde cuando está marcado */
+  color: white; /* Color del texto cuando está marcado */
+}
+
+/* Opcional: añadir un efecto cuando el checkbox está marcado */
+.status-checkbox:checked + .status-label::after {
+  content: "⭐"; /* Marca de verificación */
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title,
+.card-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-checkboxes {
+  gap: 5px; /* Espacio entre los checkboxes */
+}
+
+.status-checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.modal-body p {
+  overflow-wrap: break-word; /* Asegura que el texto largo se ajuste dentro del contenedor */
+}
+
+.modal-dialog-scrollable {
+  max-height: 80vh; /* Ajusta según sea necesario para permitir el desplazamiento si el contenido es largo */
+}
