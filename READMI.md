@@ -24,12 +24,79 @@ Este proyecto es un sistema CRUD (Crear, Leer, Actualizar, Eliminar) para la ges
 
 - Tener [Node.js](https://nodejs.org/) y [npm](https://www.npmjs.com/) instalados en el equipo.
 - Tener [PostgreSQL](https://www.postgresql.org/) instalado y en funcionamiento.
-- Tener configurado un entorno de desarrollo para Angular y NestJS.
+- Tener configurado un entorno de desarrollo para Angular y NestJS (visual studio code).
+
+### Instalación de Node.js
+
+1. **Windows / macOS / Linux**
+
+   - Descarga el instalador desde [la página oficial de Node.js](https://nodejs.org/).
+   - Ejecuta el instalador y sigue las instrucciones en pantalla para completar la instalación.
+
+2. **Verificar la Instalación**
+
+   - Abre una terminal o línea de comandos y ejecuta:
+     ```bash
+     node -v
+     npm -v
+     ```
+   - Deberías ver la versión instalada de Node.js y npm.
+
+### Instalación de Angular CLI
+
+1. **Instalación Global**
+
+   - Abre una terminal o línea de comandos y ejecuta:
+     ```bash
+     npm install -g @angular/cli
+     ```
+
+2. **Verificar la Instalación**
+
+   - Ejecuta:
+     ```bash
+     ng version
+     ```
+   - Deberías ver la versión de Angular CLI instalada.
+
+### Instalación de PostgreSQL
+
+1. **Windows**
+
+   - Descarga el instalador desde [la página oficial de PostgreSQL](https://www.postgresql.org/download/windows/).
+   - Ejecuta el instalador y sigue las instrucciones en pantalla para completar la instalación.
+
+2. **macOS**
+
+   - Puedes instalar PostgreSQL usando Homebrew:
+     ```bash
+     brew install postgresql
+     ```
+   - Luego inicia el servicio:
+     ```bash
+     brew services start postgresql
+     ```
+
+3. **Linux**
+
+   - En distribuciones basadas en Debian (Ubuntu, etc.):
+     ```bash
+     sudo apt update
+     sudo apt install postgresql postgresql-contrib
+     ```
+   - En distribuciones basadas en Red Hat (Fedora, CentOS, etc.):
+     ```bash
+     sudo dnf install postgresql-server postgresql-contrib
+     ```
+
+4. **Verificar la Instalación**
+
+   - Ejecuta:
+     ```bash
+     psql --version
+     ```
+   - Deberías ver la versión de PostgreSQL instalada.
+
 
 ## Cómo Ejecutar el Proyecto
 
-1. **Clonar el Repositorio**
-
-   ```bash
-   git clone [URL del repositorio]
-   cd [nombre-del-repositorio]
