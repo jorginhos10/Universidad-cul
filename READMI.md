@@ -156,4 +156,4 @@ Este proyecto es un sistema CRUD (Crear, Leer, Actualizar, Eliminar) para la ges
      - **Editar**: La opción para editar la tarea está disponible justo encima del estado de la tarea.
 
 
-** APLICATIVO CREADO POR JORGE ALBEIRO VALENCIA BOLIVAR C.C 1045727715**
+## APLICATIVO CREADO POR JORGE ALBEIRO VALENCIA BOLIVAR C.C 1045727715
