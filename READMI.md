@@ -100,3 +100,59 @@ Este proyecto es un sistema CRUD (Crear, Leer, Actualizar, Eliminar) para la ges
 
 ## Cómo Ejecutar el Proyecto
 
+1. **Configurar la Base de Datos**
+
+   Antes de ejecutar el proyecto, debes crear una base de datos en PostgreSQL con los siguientes detalles:
+
+   - **Dialect**: `postgres`
+   - **Database**: `dbuser`
+   - **Username**: `postgres`
+   - **Password**: `password`
+   - **Host**: `localhost`
+   - **Port**: `5432`
+
+2. **Clonar el Repositorio**
+
+   Descarga las carpetas `frontend` y `backend` desde el repositorio de GitHub.
+
+3. **Abrir el Proyecto en Visual Studio Code**
+
+   - Abre dos ventanas independientes de Visual Studio Code.
+   - En una ventana, abre la carpeta `frontend`.
+   - En la otra ventana, abre la carpeta `backend`.
+
+4. **Ejecutar el Frontend**
+
+   - En la ventana de Visual Studio Code con la carpeta `frontend` abierta, abre una terminal.
+   - Ejecuta el servidor local con el siguiente comando:
+     ```bash
+     ng serve -o
+     ```
+   - Esto iniciará el servidor de desarrollo de Angular y abrirá la aplicación en tu navegador predeterminado.
+
+5. **Ejecutar el Backend**
+
+   - En la ventana de Visual Studio Code con la carpeta `backend` abierta, abre una terminal.
+   - Ejecuta el servidor local con el siguiente comando:
+     ```bash
+     npm run start:dev
+     ```
+   - Esto iniciará el servidor de desarrollo de NestJS.
+
+6. **Uso del Proyecto**
+
+   - Una vez que ambos servidores estén en funcionamiento, abre tu navegador y navega a `http://localhost:4200`.
+   - Regístrate en la aplicación proporcionando los datos requeridos.
+   - Inicia sesión con tus credenciales para acceder a las funcionalidades de gestión de tareas.
+
+   **Vista Principal y Gestión de Tareas**
+
+   - Después de iniciar sesión, te encontrarás en la vista principal de la aplicación. Allí verás un icono de "+" que te permite agregar una nueva tarea.
+   - Para crear una tarea, haz clic en el icono de "+", y se abrirá un formulario donde podrás rellenar el título, la descripción y la fecha de vencimiento de la tarea.
+   - Una vez creada, la tarea se mostrará en la vista principal como una tarjeta. Las tarjetas de tarea tienen las siguientes características:
+     - **Estados**: Puedes manipular los estados de la tarea, que son: "En proceso", "Pendiente" y "Completado". El estado se puede cambiar dependiendo del estado actual de la tarea.
+     - **Edición**: En la parte superior derecha de cada tarjeta, hay un ícono de tres puntos. Al hacer clic en él, se abrirá un menú con la opción de eliminar la tarea.
+     - **Guardar Automático**: La tarea se guarda automáticamente al crearla y es legible inmediatamente en la vista principal.
+     - **Editar**: La opción para editar la tarea está disponible justo encima del estado de la tarea.
+
+
